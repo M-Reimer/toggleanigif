@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Toggle Animated Gif",
+  "version": "1.0.0",
+
+  "description": "__MSG_extensionDescription__",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{68e413c3-f9d1-4dbe-b5d4-2405f5b2506c}",
+      "strict_min_version": "57.0"
+    }
+  },
+
+  "icons": {
+    "24": "icons/toggleanigif.svg",
+    "32": "icons/toggleanigif.svg",
+    "50": "icons/toggleanigif.svg"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "icons/toggleanigif.svg",
+    "default_title": "__MSG_button_title__",
+    "theme_icons": [{
+      "dark": "icons/toggleanigif.svg",
+      "light": "icons/toggleanigif-light.svg",
+      "size": 19
+    }]
+  },
+
+  "permissions": [
+    "browserSettings"
+  ],
+
+  "default_locale": "en"
+}
