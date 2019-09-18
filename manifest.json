@@ -33,6 +33,16 @@
     }]
   },
 
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+    }
+  },
+
   "permissions": [
     "browserSettings"
   ],
