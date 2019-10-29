@@ -18,11 +18,16 @@
 
 // Fired if the toolbar button is clicked.
 // Toggles the anigif setting.
-async function ToolbarButtonClicked() {
+async function ToolbarButtonClicked(aTab) {
   let value = (await browser.browserSettings.imageAnimationBehavior.get({})).value;
   value = (value == "none") ? "normal" : "none";
   await browser.browserSettings.imageAnimationBehavior.set({value: value});
   await UpdateBadge();
+
+  const prefs = await browser.storage.local.get();
+  const autoreload = prefs.autoreload || false;
+  if (autoreload)
+    browser.tabs.reload(aTab.id);
 }
 
 // Sets browserAction badge text based on anigif status.

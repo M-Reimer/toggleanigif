@@ -44,7 +44,8 @@
   },
 
   "permissions": [
-    "browserSettings"
+    "browserSettings",
+    "storage"
   ],
 
   "default_locale": "en"
