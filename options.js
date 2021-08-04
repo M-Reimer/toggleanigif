@@ -11,17 +11,13 @@ async function CheckboxChanged(e) {
 
 function init() {
   [
-    "autoreload_label",
-    "reset_shortcuts_button"
+    "autoreload_label"
   ].forEach((id) => {
     document.querySelector("#" + id).textContent = browser.i18n.getMessage(id);
   });
 
   loadOptions();
   checkAutoReload.addEventListener("change", CheckboxChanged);
-
-  // Init shortcut reset button
-  ResetShortcuts.Init();
 }
 
 function loadOptions() {

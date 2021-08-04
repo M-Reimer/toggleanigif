@@ -21,10 +21,5 @@
   "autoreload_label": {
     "message": "Automatically reload current page on toggle",
     "description": "Label for auto reload checkbox in the options page"
-  },
-
-  "reset_shortcuts_button": {
-    "message": "Reset keyboard shortcut",
-    "description": "Label for the keyboard shortcut reset button"
   }
 }
