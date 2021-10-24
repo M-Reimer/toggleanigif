@@ -1,0 +1,27 @@
+{
+  "extensionDescription": {
+    "message": "Inaktiverar eller aktiverar animeringen av bilder (vanligtvis animerade GIF:s).",
+    "hash": "e1b25bd130b742ee2a696f91b2d9bb96"
+  },
+  "button_title": {
+    "message": "Animerad GIF",
+    "description": "Text displayed next to button or as tooltip of the button",
+    "hash": "6598fb8e176b2d141cf0dfac0f4b0db6"
+  },
+  "title_enabled": {
+    "message": "på",
+    "description": "Text displayed in the title if anigifs are ON.",
+    "hash": "2dc975ff398a1ab9ff9f676829b78130"
+  },
+  "title_disabled": {
+    "message": "av",
+    "hash": "674313aceb22ee1d8fc128bf141df88d"
+  },
+  "autoreload_label": {
+    "message": "Ladda automatiskt om nuvarande sida vid växling",
+    "description": "Label for auto reload checkbox in the options page",
+    "hash": "f87de5700500aa2ca06d5c3e1d5d8026"
+  },
+
+  "__WET_LOCALE__": { "message": "sv" }
+}
