@@ -5,7 +5,8 @@
 
 FILES = manifest.json \
         background.js \
-        iconupdater.js \
+        utils/iconupdater.js \
+        utils/html-i18n.js \
         options.html \
         options.js \
         $(wildcard _locales/*/messages.json) \
@@ -42,3 +43,13 @@ arun:
 	else \
 	  web-ext run --target=firefox-android --android-device="$(ANDROIDDEVICE)"; \
 	fi
+
+# Subtree stuff for webext-utils
+# Note to myself. Initial setup of subtree:
+# git subtree add --prefix utils git@github.com:M-Reimer/webext-utils.git master
+
+subtree-pull:
+	git subtree pull --prefix utils "$(WEBEXT_UTILS_REPO)" master
+
+subtree-push:
+	git subtree push --prefix utils "$(WEBEXT_UTILS_REPO)" master

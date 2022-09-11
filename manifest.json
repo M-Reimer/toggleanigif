@@ -19,7 +19,7 @@
   },
 
   "background": {
-    "scripts": ["iconupdater.js", "background.js"]
+    "scripts": ["utils/iconupdater.js", "background.js"]
   },
 
   "browser_action": {
