@@ -45,7 +45,12 @@
 
   "permissions": [
     "browserSettings",
-    "storage"
+    "storage",
+    "menus"
+  ],
+
+  "optional_permissions": [
+    "<all_urls>"
   ],
 
   "default_locale": "en"

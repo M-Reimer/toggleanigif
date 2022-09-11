@@ -18,8 +18,17 @@
     "description": "Text displayed in the title if anigifs are OFF."
   },
 
+  "freeze_animation_title": {
+    "message": "Animation einfrieren",
+    "description": "Title for the freeze animation menu entry"
+  },
+
   "autoreload_label": {
     "message": "Aktuelle Seite beim Umschalten automatisch neu laden",
     "description": "Label for auto reload checkbox in the options page"
+  },
+  "freeze_label": {
+    "message": "\"Animation einfrieren\"-Eintrag zum Kontextmenü von Bildern hinzufügen",
+    "description": "Label for freeze animation checkbox in the options page"
   }
 }

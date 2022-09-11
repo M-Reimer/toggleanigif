@@ -1,6 +1,6 @@
 /*
     Firefox addon "Toggle Animated Gif"
-    Copyright (C) 2019  Manuel Reimer <manuel.reimer@gmx.de>
+    Copyright (C) 2022  Manuel Reimer <manuel.reimer@gmx.de>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -43,6 +43,37 @@ async function UpdateBadge() {
     browser.browserAction.setBadgeText({text: badgetext});
   browser.browserAction.setTitle({title: title});
 }
+
+// Shows/hides the "Freeze animation" context menu entry based on the
+// availability of the required "<all_urls>" permission.
+async function UpdateMenu() {
+  browser.menus.removeAll();
+  if (await browser.permissions.contains({origins: ["<all_urls>"]})) {
+    browser.menus.create({
+      title: browser.i18n.getMessage("freeze_animation_title"),
+      contexts: ["image"]
+    })
+  }
+}
+browser.permissions.onAdded.addListener(UpdateMenu);
+browser.permissions.onRemoved.addListener(UpdateMenu);
+UpdateMenu();
+
+// Fired if the context menu entry "Freeze animation" is clicked.
+browser.menus.onClicked.addListener(async (info, tab) => {
+  // Load our content script into the active tab
+  await browser.tabs.executeScript(tab.id, {
+    allFrames: true,
+    file: "contentscript.js"
+  });
+
+  // Communicate the targetElementId, which references the image, to our
+  // content script.
+  await browser.tabs.sendMessage(tab.id, {
+    type: "FreezeAnimation",
+    elementid: info.targetElementId
+  });
+});
 
 // Set background color to a non-intrusive gray
 if (browser.browserAction.setBadgeBackgroundColor !== undefined) // Not Android
