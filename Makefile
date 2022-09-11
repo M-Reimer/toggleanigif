@@ -5,6 +5,7 @@
 
 FILES = manifest.json \
         background.js \
+        contentscript.js \
         utils/iconupdater.js \
         utils/html-i18n.js \
         options.html \
