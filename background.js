@@ -55,25 +55,29 @@ async function UpdateMenu() {
     })
   }
 }
-browser.permissions.onAdded.addListener(UpdateMenu);
-browser.permissions.onRemoved.addListener(UpdateMenu);
-UpdateMenu();
 
-// Fired if the context menu entry "Freeze animation" is clicked.
-browser.menus.onClicked.addListener(async (info, tab) => {
-  // Load our content script into the active tab
-  await browser.tabs.executeScript(tab.id, {
-    allFrames: true,
-    file: "contentscript.js"
-  });
+// Only of "menus" support exists (not on Android)
+if (browser.menus !== undefined) {
+  browser.permissions.onAdded.addListener(UpdateMenu);
+  browser.permissions.onRemoved.addListener(UpdateMenu);
+  UpdateMenu();
 
-  // Communicate the targetElementId, which references the image, to our
-  // content script.
-  await browser.tabs.sendMessage(tab.id, {
-    type: "FreezeAnimation",
-    elementid: info.targetElementId
+  // Fired if the context menu entry "Freeze animation" is clicked.
+  browser.menus.onClicked.addListener(async (info, tab) => {
+    // Load our content script into the active tab
+    await browser.tabs.executeScript(tab.id, {
+      allFrames: true,
+      file: "contentscript.js"
+    });
+
+    // Communicate the targetElementId, which references the image, to our
+    // content script.
+    await browser.tabs.sendMessage(tab.id, {
+      type: "FreezeAnimation",
+      elementid: info.targetElementId
+    });
   });
-});
+}
 
 // Set background color to a non-intrusive gray
 if (browser.browserAction.setBadgeBackgroundColor !== undefined) // Not Android
