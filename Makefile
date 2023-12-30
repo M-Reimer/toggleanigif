@@ -19,6 +19,8 @@ VERSION = $(shell sed -n  's/^  "version": "\([^"]\+\).*/\1/p' manifest.json)
 
 ANDROIDDEVICE = $(shell adb devices | cut -s -d$$'\t' -f1 | head -n1)
 
+WEBEXT_UTILS_REPO = git@github.com:M-Reimer/webext-utils.git
+
 trunk: $(ADDON)-trunk.xpi
 
 release: $(ADDON)-$(VERSION).xpi
