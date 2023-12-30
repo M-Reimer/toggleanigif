@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="utils/options.css"/>
   </head>
   <body>
     <form>
-      <input type="checkbox" id="autoreload_checkbox"/>
-      <label for="autoreload_checkbox" data-i18n-id="autoreload_label">Automatically reload current page on toggle</label>
+      <div class="checkbox">
+        <input type="checkbox" id="autoreload_checkbox"/>
+        <label for="autoreload_checkbox" data-i18n-id="autoreload_label">Automatically reload current page on toggle</label>
+      </div>
 
-      <br/>
-
-      <input type="checkbox" id="freeze_checkbox"/>
-      <label for="freeze_checkbox" data-i18n-id="freeze_label">Add "Freeze animation" option to the context menu of images</label>
+      <div class="checkbox">
+        <input type="checkbox" id="freeze_checkbox"/>
+        <label for="freeze_checkbox" data-i18n-id="freeze_label">Add "Freeze animation" option to the context menu of images</label>
+      </div>
     </form>
 
     <script src="utils/html-i18n.js"></script>
