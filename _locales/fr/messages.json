@@ -1,0 +1,38 @@
+{
+  "extensionDescription": {
+    "message": "Active ou désactive l’animation des images (souvent les GIFs animés).",
+    "description": "Description of the extension.",
+    "hash": "e1b25bd130b742ee2a696f91b2d9bb96"
+  },
+  "button_title": {
+    "message": "GIFs animés",
+    "description": "Text displayed next to button or as tooltip of the button",
+    "hash": "6598fb8e176b2d141cf0dfac0f4b0db6"
+  },
+  "title_enabled": {
+    "message": "oui",
+    "description": "Text displayed in the title if anigifs are ON.",
+    "hash": "2dc975ff398a1ab9ff9f676829b78130"
+  },
+  "title_disabled": {
+    "message": "non",
+    "hash": "674313aceb22ee1d8fc128bf141df88d"
+  },
+  "freeze_animation_title": {
+    "message": "Mettre l’animation en pause",
+    "description": "Title for the freeze animation menu entry",
+    "hash": "07bde5dd182003550f45763889a65737"
+  },
+  "autoreload_label": {
+    "message": "Automatiquement recharger la page actuelle sur changement",
+    "description": "Label for auto reload checkbox in the options page",
+    "hash": "f87de5700500aa2ca06d5c3e1d5d8026"
+  },
+  "freeze_label": {
+    "message": "Ajouter « Mettre l’animation en pause » dans le menu clic droit",
+    "description": "Label for freeze animation checkbox in the options page",
+    "hash": "125b2d87559faa5e90397e9d6b2d232c"
+  },
+
+  "__WET_LOCALE__": { "message": "fr" }
+}
