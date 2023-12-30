@@ -25,8 +25,16 @@ async function CheckboxChanged(e) {
   }
 }
 
-function init() {
-  loadOptions();
+async function init() {
+  // Android
+  if ((await browser.runtime.getPlatformInfo()).os === "android") {
+    const items = document.querySelectorAll('*[data-hide-on-android]');
+    for (const item of items)
+      item.setAttribute("style", "display:none");
+  }
+
+  await loadOptions();
+
   checkAutoReload.addEventListener("change", CheckboxChanged);
   checkFreeze.addEventListener("change", checkFreezeChanged);
 }
