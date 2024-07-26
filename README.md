@@ -1,5 +1,5 @@
-Toggle Animated GIF
-===================
+Toggle Image Animations
+=======================
 
 Main repository: https://github.com/M-Reimer/toggleanigif.
 
