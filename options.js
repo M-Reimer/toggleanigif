@@ -47,4 +47,9 @@ async function loadOptions() {
   });
 }
 
+// This allows direct feedback if the user adds or removes the permission using
+// the Firefox built-in Permissions GUI.
+browser.permissions.onAdded.addListener(loadOptions);
+browser.permissions.onRemoved.addListener(loadOptions);
+
 init();
