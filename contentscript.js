@@ -38,6 +38,8 @@
       canvas.height = elem.height;
       canvas.getContext("2d").drawImage(elem, 0, 0, elem.width, elem.height);
       elem.src = canvas.toDataURL("image/png");
+      // The srcset attribute may be priorized over the src attribute.
+      elem.removeAttribute("srcset")
     }
   });
 })();
